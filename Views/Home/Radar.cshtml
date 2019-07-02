@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Radar Chart";
+}
+
+<div><canvas id="radarChart"></canvas></div>
+
+@{ChartJSCore.Models.Chart chart = (ChartJSCore.Models.Chart)ViewData["chart"]; }
+
+@section Scripts {
+    <script src="~/lib/chartjs/Chart.min.js"></script>
+    <script>
+        @Html.Raw(chart.CreateChartCode("radarChart"));
+    </script>
+}

@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Bubble Chart";
+}
+
+<div><canvas id="bubbleChart"></canvas></div>
+
+@{ChartJSCore.Models.Chart chart = (ChartJSCore.Models.Chart)ViewData["chart"]; }
+
+@section Scripts {
+    <script src="~/lib/chartjs/Chart.min.js"></script>
+    <script>
+        @Html.Raw(chart.CreateChartCode("bubbleChart"));
+    </script>
+}
